@@ -1,0 +1,6 @@
+{
+  "nombre": "Ana López",
+  "edad": 28,
+  "esEstudiante": false,
+  "hobbies": ["leer", "correr", "cocinar"]
+}

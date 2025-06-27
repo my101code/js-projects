@@ -1,0 +1,11 @@
+{
+  "id": "P001",
+  "nombre": "Laptop Gamer",
+  "precio": 1200.50,
+  "stock": 15,
+  "especificaciones": {
+    "marca": "XYZ",
+    "RAM": "16GB",
+    "procesador": "Intel i7"
+  }
+}

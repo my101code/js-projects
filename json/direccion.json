@@ -1,0 +1,13 @@
+{
+  "ciudad": "Madrid",
+  "pais": "España",
+  "clima": {
+    "temperatura": 22.5,
+    "humedad": 65,
+    "condicion": "soleado"
+  },
+  "pronostico": [
+    { "dia": "Lunes", "max": 24, "min": 18 },
+    { "dia": "Martes", "max": 26, "min": 20 }
+  ]
+}
