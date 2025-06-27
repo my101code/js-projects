@@ -3,7 +3,7 @@
 
 <script>
 
-// Suponiendo que tenemos un archivo "datos.json" en el servidor:
+// Suponiendo que tenemos un archivo "empleados.json" en el servidor:
 fetch('empleados.json')
   .then(response => response.json()) // Convierte la respuesta a JSON
   .then(data => {

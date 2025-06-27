@@ -1,0 +1,9 @@
+{
+  "activo": true,
+  "notas": [7.5, 8, 9.3],
+  "direccion": {
+    "calle": "Av. Principal",
+    "numero": null,
+    "codigoPostal": "28001"
+  }
+}
