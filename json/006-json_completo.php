@@ -18,7 +18,8 @@ const respuestaAPI = `
 
 // Convertir a objeto y acceder a datos
 const datos = JSON.parse(respuestaAPI);
-console.log(datos.data.users[0].name); // "John"    
+console.log(datos.data.users[0].name); // "John"  
+console.log(datos.status);  
 
 </script>
 
