@@ -33,33 +33,49 @@
   </div>
 
   <script>
+    // funcion para crear campo a rellenar.
     function agregarCampo() {
       const contenedor = document.getElementById("camposContainer");
-      const nuevoCampo = document.createElement("div");
-      nuevoCampo.className = "flex space-x-2 mt-2";
+      const nuevoCampo = document.createElement("div"); // crear un nuevo elemeto DIV
+      nuevoCampo.className = "flex space-x-2 mt-2"; // dar class a Div creado 
+        // resultado: <div class="flex space-x-2 mt-2">
 
       nuevoCampo.innerHTML = `
         <input type="text" name="clave" placeholder="Propiedad" class="w-1/2 p-2 border rounded" required>
         <input type="text" name="valor" placeholder="Valor" class="w-1/2 p-2 border rounded" required>
-      `;
-      contenedor.appendChild(nuevoCampo);
+      `;    // aqui metemos una parte html dentro de DIV creado
+            // resultado (nuevoCampo):
+            /*  <div class="flex space-x-2 mt-2">
+                  <input type="text" name="clave" placeholder="Propiedad" class="w-1/2 p-2 border rounded" required="">
+                  <input type="text" name="valor" placeholder="Valor" class="w-1/2 p-2 border rounded" required="">
+                </div>
+            */ 
+      contenedor.appendChild(nuevoCampo); // asi haremos que (nuevoCampo) sea hijo de (contenedor) cuyo ID camposContainer.
     }
 
+    // evento a pulsar el buton submit Generar JSON:
     document.getElementById("jsonForm").addEventListener("submit", function(e) {
-      e.preventDefault();
+      e.preventDefault(); //  Evita que el formulario se envíe de forma tradicional (es decir, que recargue la página).
 
-      const claves = document.getElementsByName("clave");
-      const valores = document.getElementsByName("valor");
+      const claves = document.getElementsByName("clave"); // obtener valor cuyo "name" es clave.
+      const valores = document.getElementsByName("valor"); // obtener valor cuyo "name" es clave.
 
-      const jsonResult = {};
+      const jsonResult = {}; // Crea un objeto vacío donde se van a ir guardando los pares clave/valor.
 
       for (let i = 0; i < claves.length; i++) {
-        const key = claves[i].value.trim();
-        const value = valores[i].value.trim();
-        jsonResult[key] = value;
+        const key = claves[i].value.trim(); // key toma el valor del input de propiedad (por ejemplo "nombre")
+        const value = valores[i].value.trim(); // value toma el valor del input de valor (por ejemplo "Juan")
+        jsonResult[key] = value; 
       }
 
       document.getElementById("resultado").textContent = JSON.stringify(jsonResult, null, 2);
+      /*
+        🔹 Convierte el objeto a texto JSON usando JSON.stringify.
+
+        🔹 El null, 2 es para que el texto quede bien formateado y legible (indentado con 2 espacios).
+
+        🔹 Luego muestra ese JSON dentro del elemento con id="resultado" (por ejemplo, en un <pre>).
+      */
     });
   </script>
 </body>
